@@ -5,6 +5,33 @@
 <!--[if gt IE 8]><!--> 
 <html> <!--<![endif]-->
 <head>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+        // https://dashboard.emailjs.com/admin/integration
+        emailjs.init('user_18Thi7RouXraZalUJPLy9');
+    })();
+</script>
+<script type="text/javascript">
+  window.onload = function() {
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          // generate a five digit number for the contact_number variable
+          this.contact_number.value = Math.random() * 100000 | 0;
+          // these IDs from the previous steps
+          emailjs.sendForm('05ism', 'template_h89mugk', this)
+              .then(function() {
+                  console.log('SUCCESS!');
+              }, function(error) {
+                  console.log('FAILED...', error);
+              });
+      });
+  }
+</script>
+
+
+
+
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="description" content="Bingo One page parallax responsive HTML Template ">
   
@@ -104,7 +131,7 @@ End Fixed Navigation
 					<h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">L'art pour L'art</h1>
 					<p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, <br> veritatis tempore nostrum id
 						officia quaerat eum corrupti, <br> ipsa aliquam velit.</p>
-					<a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn btn-danger" href="https://www.instagram.com/05__ism" target="_blank">INSTAGRAM</a>
+					<a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn btn-primary" href="https://www.instagram.com/05__ism" target="_blank">INSTAGRAM</a>
 				</div>
 			</div>
 		</div>
@@ -117,7 +144,7 @@ End Fixed Navigation
 					<p data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".5">Create just what you need
 						for your Perfect Website. Choose from a wide range
 						<br> of Elements & simply put them on our Canvas.</p>
-					<a data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".8"  class="btn btn-danger" href="https://www.instagram.com/05__ism" target="_blank">INSTAGRAM</a>
+					<a data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".8"  class="btn btn-primary" href="https://www.instagram.com/05__ism" target="_blank">INSTAGRAM</a>
 				</div>
 			</div>
 		</div>
@@ -378,6 +405,18 @@ Start Call To Action
     <h6>Design and Developed by <a href="">Themefisher</a></h6>
 		<h6>Distributed by <a href="https://themewagon.com/">Themewagon</a></h6>
   </div>
+
+  <form id="contact-form">
+    <input type="hidden" name="contact_number">
+    <label>Name</label>
+    <input type="text" name="to_name">
+    <label>Email</label>
+    <input type="email" name="from_email">
+    <label>Message</label>
+    <textarea name="message"></textarea>
+    <input type="submit" value="Send">
+  </form>
+
 </footer> <!-- end footer -->
 
 
