@@ -8,7 +8,7 @@ body {
 p {
   font-family: "Source Sans Pro", sans-serif;
   color: #848484;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -58,9 +58,9 @@ a:focus, a:hover {
   display: inline-block;
   font-size: 14px;
   letter-spacing: 1px;
-  padding: 12px 40px;
+  padding: 7px 20px;
   text-transform: uppercase;
-  border-radius: 40px;
+
 }
 
 .btn-main:hover {
