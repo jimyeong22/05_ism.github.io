@@ -111,7 +111,7 @@
       rules: {
         name: {
           required: true,
-          minlength: 4
+          minlength: 2
         },
         email: {
           required: true,
@@ -130,7 +130,7 @@
           minlength: 'Your name must consist of at least 2 characters'
         },
         email: {
-          required: 'Please put your email address'
+          required: '이메일 주소를 작성해주세요'
         },
         message: {
           required: 'Put some messages here?',
